@@ -82,8 +82,9 @@ Marquer avec `@pytest.mark.perf` et exécuter séparément (ex. `make perf_test`
   - `services/serialization.py`  
   - `services/logic.py`  
   - `services/app.py` (Flask)  
-  - `tests/unit/` (tests de serialization et logic)  
-  - `tests/integration/` (tests d'API, mocks PointSetManager)  
+  - `tests/serialization/` (tests de serialization)  
+  - `tests/triangulation/` (tests de triangulation)  
+  - `tests/Api/` (tests d'API, mocks PointSetManager)  
   - `tests/perf/` (marqués `@pytest.mark.perf`)
 
 
