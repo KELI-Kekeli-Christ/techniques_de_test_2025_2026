@@ -10,7 +10,7 @@ def _cross_product(
     a: tuple[float, float],
     b: tuple[float, float]
 ) -> float:
-    """Calcule le produit vectoriel (a - o) x (b - o).
+    """Fait le produit vectoriel (a - o) x (b - o).
     
     Args:
         o: Point origine
@@ -132,9 +132,10 @@ def _are_collinear(
 
 def compute_triangulation(
     points: list[tuple[float, float]]
-) -> list[tuple[int, int, int]]:
-    """Calcule une triangulation pour un ensemble de points 2D.
-    
+)-> list[tuple[int, int, int]]:
+    """ 
+    Triangule  un ensemble de points 2D.
+
     Utilise un algorithme de triangulation de Delaunay simplifié
     basé sur l'ajout incrémental de points.
     

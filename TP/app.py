@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-POINT_SET_MANAGER_URL = "http://localhost:5000"
+POINT_SET_MANAGER_URL = "http://localhost:5001"
 
 
 @app.route("/triangulation/<pointSetId>", methods=["GET"])
@@ -43,7 +43,7 @@ def get_triangulation(pointSetId: str):
         point_set_uuid = uuid.UUID(pointSetId)
         log.debug(f"UUID validé: {point_set_uuid}")
     except ValueError:
-        # Gère le cas d'un format d'ID invalide (Erreur 400) [cite: triangulator.yml]
+        # Gère le cas d'un format d'ID invalide (Erreur 400)
         log.warning(f"Format UUID invalide: {pointSetId}")
         abort(400, description="Le PointSetID n'est pas un UUID valide.")
 
@@ -118,7 +118,6 @@ def get_triangulation(pointSetId: str):
 
 
 # --- Gestion d'erreurs JSON ---
-
 @app.errorhandler(400)
 def bad_request(error):
     """Handle 400 Bad Request errors."""
@@ -160,5 +159,4 @@ def internal_error(error):
     }), 500
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+

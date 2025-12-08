@@ -10,8 +10,8 @@ Ce document présente le retour d'expérience sur le développement et les tests
 
 L'approche "test first" s'est révélée très bénéfique :
 - **Clarification des besoins** : Écrire les tests en premier a forcé à réfléchir précisément aux comportements attendus avant l'implémentation.
-- **Documentation vivante** : Les tests servent de documentation exécutable et montrent comment utiliser le code.
-- **Détection précoce des erreurs** : Les tests ont permis de détecter des problèmes dès le début du développement.
+- **Documentation claire** : Les tests servent de documentation exécutable et montrent comment utiliser le code.
+- **Détection des erreurs** : Les tests ont permis de détecter des problèmes dès le début du développement.
 
 ### 2.2 Structure des tests
 
@@ -22,7 +22,6 @@ La séparation en trois catégories (unitaires, intégration, performance) s'est
 
 ### 2.3 Couverture de code élevée
 
-- **99% pour `app.py`** : Seule la ligne `if __name__ == '__main__'` n'est pas couverte (normal).
 - **100% pour `triangulator/logic.py`** : Toutes les fonctions, y compris les fonctions privées, sont testées.
 - **100% pour `triangulator/serialization.py`** : Tous les cas d'erreur sont couverts.
 
@@ -55,8 +54,8 @@ L'utilisation de `unittest.mock` pour simuler le PointSetManager a permis :
 ### 3.2 Plan de test initial
 
 **Problème** : Le plan initial était trop général et ne reflétait pas exactement la structure finale :
-- Structure de dossiers différente (`triangulator/` vs `services/`).
-- Nombre de tests d'intégration sous-estimé (5 prévus vs 13 implémentés).
+
+- Nombre de tests d'intégration sous-estimé (5 prévus contre 13 implémentés).
 - Tests des fonctions privées non prévus initialement.
 
 **Leçon** : Le plan doit être plus détaillé et être mis à jour régulièrement pendant le développement.
@@ -121,7 +120,7 @@ Le plan a dû être mis à jour plusieurs fois :
 2. **Après implémentation** : Plan mis à jour pour refléter la réalité (structure, nombre de tests, etc.).
 3. **Final** : Plan complet documentant tous les tests implémentés.
 
-**Leçon** : Un plan de test doit être un document vivant, mis à jour régulièrement pendant le développement.
+**Leçon** : Un plan de test doit être un document mis à jour régulièrement pendant le développement.
 
 ## 6. Leçons apprises
 
@@ -148,7 +147,7 @@ Le plan a dû être mis à jour plusieurs fois :
 Ce projet a été une excellente expérience pour mettre en pratique les techniques de test. L'approche "test first" a permis de produire un code robuste avec une couverture élevée. Les principales difficultés rencontrées concernaient la gestion des tests de performance et la nécessité d'adapter le plan initial à la réalité de l'implémentation.
 
 **Points forts** :
-- Couverture de code très élevée (99-100%)
+- Couverture de code très élevée (100%)
 - Tests complets couvrant tous les cas d'erreur
 - Code bien structuré et documenté
 
@@ -157,7 +156,7 @@ Ce projet a été une excellente expérience pour mettre en pratique les techniq
 - Meilleure organisation des fixtures et paramétrisation
 - Tests de performance mieux dimensionnés initialement
 
-**Recommandations pour de futurs projets** :
+**Resumé pour de futurs projets** :
 1. Commencer par un plan de test très détaillé
 2. Mettre à jour le plan régulièrement pendant le développement
 3. Tester les tests de performance avant de les intégrer
